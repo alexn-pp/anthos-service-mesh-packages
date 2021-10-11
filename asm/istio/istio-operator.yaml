@@ -51,9 +51,9 @@ spec:
           hpaSpec:
             maxReplicas: 5
             minReplicas: 2
-        serviceAnnotations:
-              networking.gke.io/load-balancer-type: Internal
-              networking.gke.io/internal-load-balancer-allow-global-access: "true"
+          serviceAnnotations:
+            networking.gke.io/load-balancer-type: Internal
+            networking.gke.io/internal-load-balancer-allow-global-access: "true"
     # The default profile is tuned to fit on smaller clusters.
     # Increase cpu req to ensure we can handle larger scale clusters.
     pilot:
