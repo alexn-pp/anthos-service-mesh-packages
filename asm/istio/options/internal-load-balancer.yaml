@@ -36,4 +36,24 @@ spec:
                 targetPort: 8443
             loadBalancerSourceRanges:
               - 10.10.0.0/22
+      - name: istio-ingressgateway-under-test
+        namespace: under-test
+        enabled: true
+        label:
+          istio: istio-ingressgateway-under-test
+        k8s:
+          serviceAnnotations:
+            cloud.google.com/load-balancer-type: "internal"
+          service:
+            ports:
+              - name: status-port
+                port: 15020
+              - name: http2
+                port: 80
+                targetPort: 8080
+              - name: https
+                port: 443
+                targetPort: 8443
+            loadBalancerSourceRanges:
+              - 10.10.0.0/22
 # [END docs]
