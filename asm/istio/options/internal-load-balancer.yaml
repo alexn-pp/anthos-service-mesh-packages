@@ -34,4 +34,6 @@ spec:
               - name: https
                 port: 443
                 targetPort: 8443
+            loadBalancerSourceRanges:
+              - 10.10.0.0/22
 # [END docs]
