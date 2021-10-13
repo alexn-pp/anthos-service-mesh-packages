@@ -51,13 +51,6 @@ spec:
           hpaSpec:
             maxReplicas: 5
             minReplicas: 2
-      - enabled: true
-        name: istio-ingressgateway-under-test
-        k8s:
-          hpaSpec:
-            maxReplicas: 5
-            minReplicas: 2
-
     # The default profile is tuned to fit on smaller clusters.
     # Increase cpu req to ensure we can handle larger scale clusters.
     pilot:
